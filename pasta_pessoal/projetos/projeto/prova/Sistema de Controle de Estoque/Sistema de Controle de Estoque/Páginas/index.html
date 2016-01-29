@@ -1,0 +1,91 @@
+<?php
+session_start();
+include "funcoes.php";
+
+
+
+?>
+<! DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<title>sistema de Estoque-Produto</title>
+	<!--ARQUIVO CSS-->
+	<link  rel="stylesheet"  href="css/bootstrap.css">
+	<link  rel="stylesheet"  href="css/estilo.css">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/ie10-viewport-bug-workaround.js"></script>	
+	
+</head>	
+	
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">Controle de Estoque</a>
+				</div>
+				
+				<div id="navbar" class="collapse navbar-collapse">
+				  <ul class="nav navbar-nav">
+					<li><a href="produto.php">Produtos</a></li>
+					<li><a href="cliente.php">Clientes</a></li>
+					<li><a href="#contact">Pedidos</a></li>
+				  </ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>	
+		<div class="container">
+			<div class="starter-template">
+				<h3>Lista de Produtos</h3>
+				<div class="jumbotron">
+					<table class="table">
+						<tr>
+							<td>identificação</td>
+							<td>Produto</td>
+							<td>nome</td>
+							<td>Descrição</td>
+							<td>Cliente</td>
+							<td>Email</td>
+							<td>Telefone</td>
+							<td>NºPedido</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>						
+					</table>
+
+				</div>			
+			</div>
+		</div><!-- /.container -->
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="../../dist/js/bootstrap.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>	
+
+	</body>
+<html>

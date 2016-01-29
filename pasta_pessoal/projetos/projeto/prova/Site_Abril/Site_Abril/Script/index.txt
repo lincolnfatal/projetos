@@ -1,0 +1,182 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link href="boilerplate.css" rel="stylesheet" type="text/css">
+<link href="m4.css" rel="stylesheet" type="text/css">
+<!-- 
+To learn more about the conditional comments around the html tags at the top of the file:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Do the following if you're using your customized build of modernizr (http://www.modernizr.com/):
+* insert the link to your js here
+* remove the link below to the html5shiv
+* add the "no-js" class to the html tags at the top
+* you can also remove the link to respond.min.js if you included the MQ Polyfill in your modernizr build 
+-->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script src="respond.min.js"></script>
+<div id="topo" class="fluid "></div>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="pubjs/clickdir.js"></script>
+<style type="text/css">
+.menutitle{
+cursor:pointer;
+margin-bottom: 1px;
+background-color:red;
+color:white;
+width:136px;
+padding:1px;
+text-align:center;
+font-weight:bold;
+/*/*/border:0px ;/* */
+; font-size: 11px}
+
+.submenu{
+margin-bottom: 0.5em;
+margin-left: 1em;
+width:136px;
+font-size: 10px
+color: black;
+background-color: white}
+A:Hover  {
+	color: black;
+	background-color: white;
+	
+}
+.title1 {
+background-color:black;
+font-color:white;
+font-weight:bold;
+/*/*/border:0px ;/* */; 
+padding:1px;
+font-size: 12px;
+color:black;
+width:136px;} 
+}
+</style>
+<script type="text/javascript">
+
+/***********************************************
+* Switch Menu script- by Martial B of http://getElementById.com/
+* Modified by Dynamic Drive for format & NS4/IE4 compatibility
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+if (document.getElementById){ //DynamicDrive.com change
+document.write('<style type="text/css">\n')
+document.write('.submenu{display: none;}\n')
+document.write('</style>\n')
+}
+
+function SwitchMenu(obj){
+	if(document.getElementById){
+	var el = document.getElementById(obj);
+	var ar = document.getElementById("masterdiv").getElementsByTagName("span"); //DynamicDrive.com change
+		if(el.style.display != "block"){ //DynamicDrive.com change
+			for (var i=0; i<ar.length; i++){
+				if (ar[i].className=="submenu") //DynamicDrive.com change
+				ar[i].style.display = "none";
+			}
+			el.style.display = "block";
+		}else{
+			el.style.display = "none";
+		}
+	}
+}
+
+</script>
+</head>
+
+<body TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 bgcolor="#FFFFFF">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="Sem título-1.gif">&nbsp;<!-- Todos os menus dentro do intervalo de masterdiv-->
+
+<div id="masterdiv">
+	<table width="1227" border="0">
+  <tbody>
+    <tr>
+      <td bgcolor="#F20C0C"> &nbsp; <img src="logo_quatrorodas.png" alt="700"/></td>
+      
+      <td bgcolor="#F20C0C">&nbsp;
+      <div class="menutitle" onclick="SwitchMenu('sub1')">Carros v</div>
+	<span class="submenu" id="sub1">
+		 <a href="html" target="right">Chevrolet</a> <br>  
+		 <a href="html" target="right">Ford</a> <br> 
+		 <a href="html" target="right">Honda</a> <br>
+		 <a href="html" target="right">Fiat</a> <br> 
+		 <a href="html" target="right">BMW</a> <br> 
+		 <a href="html" target="right">Volkwagen</a> <br>
+		 <a href="html" target="right">Kia</a> <br>  
+		 <a href="html" target="right">Mercedes</a> <br>  
+	</span>
+      </td>
+      <td bgcolor="#F20C0C">
+      &nbsp;<div class="menutitle" onclick="SwitchMenu('sub2')">Testes v</div>
+	<span class="submenu" id="sub2">
+		 <a href="html" target="Fr2">Comparativos</a> <br> 
+		 <a href="html" target="Fr2">Impress?es</a> <br> 
+		 <a href="html" target="Fr2">Longa Dura??o</a> <br> 
+		 <a href="html" target="Fr2">Teste de Pista</a> <br> 
+	</span>
+      
+      </td>
+      <td bgcolor="#F20C0C">
+      &nbsp; <div class="menutitle" onclick="SwitchMenu('sub3')">Noticias v</div>
+  <span class="submenu" id="sub3">
+	   	<a href="html"  target="right">Cl?ssicos</a> <br> 
+	    	<a href="html"  target="right">Curiosidades</a> <br> 
+	   	<a href="html"  target="right">Lan?amentos</a> <br>
+	    	<a href="html"  target="right">Mercado</a> 
+	 	<a href="html"  target="right">Segredo</a> <br>
+	</span>
+      </td>
+      <td bgcolor="#F20C0C">&nbsp;
+        <div class="menutitle" onclick="SwitchMenu('sub4')" style="width: 136; height: 19"> Auto-Servi?o v</div>
+	<span class="submenu" id="sub4">
+		<a href="html"  target="Fr2">Auto-defesa</a> <br> 
+		<a href="html" target="Fr2">Correio t?cnico</a> <br> 
+		<a href="html" target="Fr2">Produtos para carro</a> <br>
+		<a href="html" target="Fr2">Se6rvi?os</a> <br>
+  </span> 
+      </td>
+      <td bgcolor="#F20C0C">
+      &nbsp;<div class="menutitle" onclick="SwitchMenu('sub5')">Guia de Compras v</div>
+  <span class="submenu" id="sub5">
+	   	<a href="html"  target="right">Melhor compra carros</a> <br> 
+	    	<a href="html"  target="right">Melhor compra motos </a> <br> 
+	   	<a href="html"  target="right">Melhor compra utilit?rios</a> <br>
+	    
+	</span>
+      </td>
+      <td bgcolor="#F20C0C">
+      &nbsp;<div class="menutitle" onclick="SwitchMenu('sub6')">Tabela FIP v</div>
+  <span class="submenu" id="sub6">
+	   	<a href="html"  target="right">Tabela FIP carros</a> <br> 
+	    	<a href="html"  target="right">Tabela FIP motos </a> <br> 
+	    
+	</span>
+      </td>
+      <td bgcolor="#FF0000">
+      &nbsp;<div class="menutitle" onclick="SwitchMenu('sub7')">Assine</div>
+      </td>
+      <td bgcolor="#F20C0C">
+      &nbsp; <input type="search">
+      </td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table><div id="topo" class="fluid "><img src="p2.jpg" alt=""/><a href="BMW1.html"><img src="p3.jpg" alt=""/></a><img src="p4.jpg" alt=""/><img src="p6.jpg" alt=""/>&nbsp;</div>
+
+
+</body>
+</html>

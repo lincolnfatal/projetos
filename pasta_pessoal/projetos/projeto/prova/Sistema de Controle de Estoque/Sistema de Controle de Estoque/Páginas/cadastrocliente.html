@@ -1,0 +1,103 @@
+<?php
+session_start();
+include "config.php";
+?>
+
+
+
+<! DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<title>sistema de Estoque-Produto</title>
+	<!--ARQUIVO CSS-->
+	<link  rel="stylesheet"  href="css/bootstrap.css">
+	<link  rel="stylesheet"  href="css/estilo.css">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/ie10-viewport-bug-workaround.js"></script>	
+	
+</head>	
+	
+	<body>
+	<img src="Topo.jpg" width="995" height="76" usemap="#Map" border="0">
+	<map name="Map">
+	  <area shape="rect" coords="455,9,606,60" href="produto.html">
+	  <area shape="rect" coords="620,6,745,61" href="cliente.html">
+	  <area shape="rect" coords="773,5,909,59" href="#">
+    </map>
+	<div class="container">
+		<div class="starter-template">
+			
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<?php 
+							if(isset($_POST['submit'])){
+								$cliente_nome = $_POST['cliente_nome'];
+								$cliente_email = $_POST['cliente_email'];
+								$cliente_telefone  = $_POST['cliente_telefone'];								
+								
+								$query = $mysqli->query("INSERT INTO cliente VALUES ('','$cliente_nome','$cliente_email','$cliente_telefone')");
+								
+								if($query){
+									?>
+								<div class="alert alert-success alert-dismissible" role="alert">
+									<a href='#'>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<strong>Sucesso!</strong> Informações Armazenadas com sucesso.
+									</a>
+								</div>
+						
+									<?php
+								}else{
+									
+									?>	
+									<div class="alert alert-danger alert-dismissible" role="alert">
+									  <a href='#'>
+									  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									  <strong>Não Foi salvo!</strong> Melhor verificar o que houve de errado.
+									  </a>
+									</div>								
+									<?php
+								}
+							}
+						?>					
+						<form method="post" class="form-horizontal">
+							
+								<h3>              Cadastrar Clientes</h3>
+								<br>
+								<div class="row">
+									<div class="col-md-2">Cliente</div>
+									<div class="col-md-4"> <input type="text" name="cliente_nome" class="form-control" id="inputEmail3"></div>
+								</div>
+								
+								<br>
+								<div class="row">
+									<div class="col-md-2">E-mail</div>
+									<div class="col-md-4"> <input type="text" name="cliente_email" class="form-control" id="inputEmail3"></div>
+								</div>	
+								<br>
+								
+								<div class="row">
+									<div class="col-md-2">Tel</div>
+									<div class="col-md-4"> <input type="text" name="cliente_telefone" class="form-control" id="inputEmail3"></div>
+								</div>	
+								<br>
+								<div id="actions" class="row">
+									<div class="col-md-12">
+									  <button type="submit" name="submit" class="btn btn-primary">Salvar</button>
+									  <a href="index.php" class="btn btn-default">Cancelar</a>
+									</div>
+								</div>									
+						</form>
+					</div>
+				</div>
+	  </div>
+	</div><!-- /.container -->
+
+
+	</body>
+<html>

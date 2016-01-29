@@ -1,0 +1,6 @@
+[06-01-2016, 02:50:36] Erro: CÃ³digo: 1044 Mensagem: SQLSTATE[HY000] [1044] Access denied for user ''@'localhost' to database 'teste_pdo'
+
+[06-01-2016, 02:52:36] Erro: CÃ³digo: 1044 Mensagem: SQLSTATE[HY000] [1044] Access denied for user ''@'localhost' to database 'teste_pdo'
+
+[06-01-2016, 23:22:33] Erro: CÃ³digo: 2002 Mensagem: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Este host não é conhecido. 
+

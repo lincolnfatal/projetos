@@ -1,0 +1,100 @@
+<?php
+session_start();
+include "config.php";
+
+
+
+?>
+<! DOCTYPE html>
+
+<html>
+
+<meta charset="UTF-8"/>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<title>Produto</title>
+	<!--ARQUIVO CSS-->
+	<link  rel="stylesheet"  href="css/bootstrap.css">
+	<link  rel="stylesheet"  href="css/estilo.css">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/ie10-viewport-bug-workaround.js"></script>	
+	
+</head>	
+	
+	<body>
+		<img src="Topo.jpg" width="1049" height="80" usemap="#Map" border="0">
+        <map name="Map">
+          <area shape="rect" coords="483,9,631,59" href="produto.html">
+          <area shape="rect" coords="645,6,791,59" href="cliente.html">
+          <area shape="rect" coords="817,9,955,57" href="Pedidos.html">
+        </map>
+		<div class="container">
+			<div class="starter-template">
+			<p>
+			<a href="cadastroproduto.php">
+			  <button type="button" class="btn btn-primary">Cadastrar</button>
+			</a>
+			</p>
+				<table class="table">
+					<thead>
+				  <th>id</th>
+						<th>Produto</th>
+						<th>Nome</th>
+						<th>Preço</th>
+						<th>Ações</th>
+					</thead>
+					<tbody>
+					<?php
+					//mudar (name $select)
+						$select = $mysqli->query("SELECT * FROM produto");
+						$row = $select->num_rows;
+						if($row){
+							While($_POST = $select->fetch_array()){
+					?>	
+						<tr>
+							<td>
+								<?php echo $_POST["produto_id"]?>
+							</td>
+							<td>
+								<?php echo $_POST["produto_nome"]?>
+							</td>
+							<td>
+								<?php echo $_POST["produto_descricao"]?>
+							</td>
+							<td>
+								<?php echo $_POST["produto_preco"]?>
+							</td>
+							<td>
+								<?php echo "<button type='button' name='editar' class='btn btn-btn btn-warning  btn-xs'>Editar</button>"?>
+								<?php echo "<button type='button' name='apagar' class='btn btn-btn btn-danger  btn-xs'>Apagar</button>"?>
+							</td>								
+						</tr>
+
+					<?php
+							}
+						}else{
+							echo "nenhum registro encontrado";
+						}
+					
+					?>
+					</tbody>
+					
+				</table>
+		  </div>
+	</div><!-- /.container -->
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="../../dist/js/bootstrap.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>	
+
+	</body>
+<html>

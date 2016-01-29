@@ -1,0 +1,107 @@
+<?php
+session_start();
+include "config.php";
+
+
+
+
+?>
+<! DOCTYPE html>
+
+<html>
+
+<meta charset="UTF-8"/>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<title>Produto</title>
+	<!--ARQUIVO CSS-->
+	<link  rel="stylesheet"  href="css/bootstrap.css">
+	<link  rel="stylesheet"  href="css/estilo.css">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/ie10-viewport-bug-workaround.js"></script>	
+	
+</head>	
+	
+	<body>
+		<img src="Topo.jpg" width="1024" height="86" usemap="#Map" border="0">
+        <map name="Map">
+          <area shape="rect" coords="473,10,619,65" href="produto.html">
+          <area shape="rect" coords="633,7,769,68" href="cliente.html">
+          <area shape="rect" coords="787,10,937,66" href="#">
+        </map>
+		<div class="container">
+			<div class="starter-template">
+			<p>
+			<a href="cadastrocliente.php">
+			  <button type="button" class="btn btn-primary">Cadastrar</button>
+			</a>
+			</p>
+				<table class="table">
+					<thead>
+						<th>id</th>
+						<th>Cliente</th>
+						<th>Nome</th>
+						<th>E-mail</th>
+						<th>Telefone</th>
+					</thead>
+					<tbody>
+					<?php
+					//mudar (name $select)
+						$select = $mysqli->query("SELECT * FROM cliente");
+						$row = $select->num_rows;
+						if($row){
+							While($_POST = $select->fetch_array()){
+					?>	
+						<tr>
+							<td>
+								<?php echo $_POST["cliente_id"]?>
+							</td>
+							<td>
+								<?php echo $_POST["cliente_nome"]?>
+							</td>
+							<td>
+								<?php echo $_POST["cliente_email"]?>
+							</td>
+							<td>
+								<?php echo $_POST["cliente_telefone"]?>
+							</td>
+							<td>
+							
+
+							<a href="editarcliente.php">
+								<button type="button" name="editarcliente" class="btn btn-btn btn-warning  btn-xs">Editar</button>
+							</a>
+							<a href="">
+							<button type="button" name="apagar" class="btn btn-btn btn-danger  btn-xs">Apagar</button>
+							</a>
+							</td>								
+						</tr>
+
+					<?php
+							}
+						}else{
+							echo "nenhum registro encontrado";
+						}
+					
+					?>
+					</tbody>
+					
+				</table>
+			</div>
+		</div><!-- /.container -->
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="../../dist/js/bootstrap.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>	
+
+	</body>
+<html>

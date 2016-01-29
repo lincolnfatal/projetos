@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>..:: THIAGO PHILIPP ::..</title>
+	<!--
+
+	Título: Formulário Bootstrap feito com o plugin de validação Form Validation
+
+	Dúvidas e Sugestões: http://blog.thiagophilipp.com.br/contato
+
+	-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/formValidation.css"/>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/formValidation.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <section>
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="page-header">
+                    <h2>Validando com FormValidation</h2>
+                </div>
+
+                <form id="defaultForm" method="post" class="form-horizontal">
+                
+                
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Nome</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" name="nome" type="text" />
+                        </div>
+                    </div>    
+                    
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Email</label>
+                        <div class="col-lg-5">
+                            <input class="form-control" name="email" type="email" />
+                        </div>
+                    </div>                    
+                                     
+                
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Sexo</label>
+                        <div class="col-lg-5">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="sexo" value="male" /> Masculino
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="sexo" value="female" /> Feminino
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">File</label>
+                        <div class="col-lg-7">
+                            <input type="file" class="form-control" name="arquivo" />
+                            <span class="help-block">Choose a pdf file.</span>
+                        </div>
+                    </div>                   
+
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Browser</label>
+                        <div class="col-lg-5">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="browsers[]" value="chrome" /> Google Chrome
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="browsers[]" value="firefox" /> Firefox
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="browsers[]" value="ie" /> IE
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="browsers[]" value="safari" /> Safari
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="browsers[]" value="opera" /> Opera
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="browsers[]" value="other" /> Other
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-3 col-lg-3">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.form-horizontal').formValidation({
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        err: {
+            container: 'tooltip'
+        },
+		
+        fields: {
+            'nome': {
+                validators: {
+                    notEmpty: {
+                        message: 'Este campo é necessário.'
+                    }
+                }
+            },
+            'email': {
+                validators: {
+                    emailAddress: {
+                        message: 'Este endereço não é valido.'
+                    }
+                }
+            },
+            'sexo': {
+                validators: {
+                    notEmpty: {
+                        message: 'Este campo é necessário.'
+                    }
+                }
+            },
+            'arquivo': {
+                validators: {
+                    notEmpty: {
+                        message: 'Este campo é necessário.'
+                    }
+                }
+            },		
+            'browsers[]': {
+                validators: {
+                    notEmpty: {
+                        message: 'Este campo é necessário.'
+                    }
+                }
+            }
+        }
+})
+        .on('success.form.fv', function(e) {
+                    $.ajax({
+                        type: "POST",
+                        url: "salvar.php",
+                        data: $('.form-horizontal').serialize(),
+                        success: function (retorno) {								
+                            alert(retorno);						
+                        },
+                        error: function (retorno) {
+                            alert(retorno);
+                        }
+                    });
+        });
+});
+</script>
+
+</body>
+</html>

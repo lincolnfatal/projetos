@@ -1,0 +1,121 @@
+<?php
+$v_params = $this->getParams();
+$v_consultas = $v_params['v_consultas'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>
+	 
+		WebService
+	</title>
+
+	
+	<link rel="stylesheet" type="text/css" href="template/css/default.css" />
+	
+</head>
+<body>
+
+
+	<div align="center">
+				
+		
+		<form method='post'>
+			<input type='text' name='valor_consulta' id='valor_consulta' value='' > 
+			<input type='hidden' name='controle' id='valor_consulta' value='Consulta' > 
+			<input type='hidden' name='acao' id='valor_consulta' value='consultarWebService' > 
+			<input type='hidden' name='tipo' id='tipo' value='Fahrenheit_Celsius' > 			
+			
+			<button type='submit' class='bt_blue' >Converter Fahrenheit para Celsius </button>
+			
+		</form>
+		
+		<form method='post'>
+			<input type='text' name='valor_consulta' id='valor_consulta' value='' > 
+			<input type='hidden' name='controle' id='valor_consulta' value='Consulta' > 
+			<input type='hidden' name='acao' id='valor_consulta' value='consultarWebService' > 
+			<input type='hidden' name='tipo' id='tipo' value='Celsius_Fahrenheit' > 			
+			
+			<button type='submit' class='bt_blue'  >Converter Celsius para Fahrenheit </button>
+			
+		</form>
+	</div>
+	<br />
+
+
+
+	<div align="center">
+		<table class='table_list' width="80%">
+		
+			<tr>
+				<th>
+					Temp. Requisitada
+				</th>
+				<th>
+					Tipo
+				</th>
+				<th>
+					Temp. Resultado
+				</th>
+				<th>
+					Data
+				</th>
+				<th>
+					IP
+				</th>
+				<th>
+					xml
+				</th>
+				<th >
+					A&ccedil;&otilde;es
+				</th>
+			</tr>
+			<?php
+			foreach($v_consultas AS $o_consulta)
+			{
+				
+				?>
+				<tr color='red'>
+					<td>
+						<?php echo $o_consulta->getRequisicaoTemperatura()?>
+					</td>
+					<td>
+						<?php echo $o_consulta->getRequisicaoTipo()?>
+					</td>
+					<td>
+						<?php echo $o_consulta->getRespostaTemperatura()?>
+					</td>
+					<td>
+						<?php echo $o_consulta->getDataConsulta()?>
+					</td>
+					<td>
+						<?php echo $o_consulta->getIp()?>
+					</td>
+					<td align="center">
+						<a href='?controle=Consulta&acao=listarXml&ind_con=<?php echo $o_consulta->getId()?>' class='bt_green' >Visualizar</a>
+					</td>
+					
+					<td align="center">
+						<a   href="javascript:confirmDelete('?controle=Consulta&acao=apagarConsulta&in_con=<?php echo $o_consulta->getId()?>')" class='bt_red'>Apagar</a>
+					
+					</td> 
+				</tr>
+				<?php
+			}
+			?>
+		</table>
+		
+	</div>
+	
+	
+</body>
+</html>
+
+<script>
+function confirmDelete(delUrl) {
+  if (confirm("Deseja excluir o registro!")) {
+    document.location = delUrl;
+  }
+}
+</script>

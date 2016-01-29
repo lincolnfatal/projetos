@@ -1,0 +1,53 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.9
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: Jul 22, 2014 as 06:38 PM
+-- Versão do Servidor: 5.5.8
+-- Versão do PHP: 5.3.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Banco de Dados: `clientes`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cad_clientes`
+--
+
+CREATE TABLE IF NOT EXISTS `cad_clientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+
+--
+-- Extraindo dados da tabela `cad_clientes`
+--
+
+INSERT INTO `cad_clientes` VALUES
+(1, 'Tiago', 'tiago@email.com'),
+(2, 'Fabio', 'fabio@email.com.br'),
+(3, 'Manoel', 'manoel@email.com'),
+(4, 'José', 'jose@uol.com'),
+(5, 'Maria Carey', 'maria@dominio.com'),
+(6, 'Epaminondas', 'epaminondas@gmail.com'),
+(7, 'Pedro', 'pedro@email.com'),
+(8, 'Eduardo', 'eduardo@gmail.com'),
+(9, 'Carlos', 'carlos@provedor.com'),
+(10, 'Maria', 'maria@dominio.com'),
+(11, 'Dirce', 'dirce@email.com'),
+(12, 'Renan', 'renan@email.com'),
+(13, 'Maicon', 'maicon@email.com'),
+(14, 'Augusto', 'augusto@email.com'),
+(15, 'Luciana', 'luciana@email.com'),
+(16, 'Gislaine', 'gislaine@bol.com'),
+(17, 'Paulo', 'paulo@email.com'),
+(18, 'João', 'joao@bol.com.br'),
+(19, 'Luana', 'luana@email.com'),
+(20, 'Thaís', 'thais@email.com');

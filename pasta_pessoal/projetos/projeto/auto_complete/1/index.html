@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Better Autocomplete examples</title>
+
+<link rel="stylesheet" href="auto_complete/better-autocomplete.css" />
+
+<style>
+
+body {
+  font: 12px 'Lucida Grande', Helvetica, Arial, Verdana, sans-serif;
+}
+
+input {
+  width: 500px;
+}
+
+input.fetching {
+  background: lightgrey;
+}
+
+#last-selection {
+  font-size: 10px;
+  color: green;
+}
+
+p.warning {
+  color: red;
+}
+
+</style>
+
+<script src="auto_complete/jquery-1.7.min.js"></script>
+<script src="auto_complete/jquery.better-autocomplete.js"></script>
+<script>
+
+var cities = [
+  'Stockholm',
+  'New York',
+  'Oslo',
+  'San Fransisco',
+  'Säffle',
+  'Göteborg',
+  'Mogadishu',
+  'Washington',
+  'Madrid',
+  'Paris',
+  'Arboga',
+  'Moscow'
+];
+
+
+$(document).ready(function() {
+
+  // Local source, string array. Simplest setup possible
+  $('#city').betterAutocomplete('init', cities, {}, {});
+
+ 
+});
+
+</script>
+</head>
+<body>
+
+  <h1>Better Autocomplete demonstration</h1>
+
+  <form>
+
+    <h2>Local source, flat string array, HTML5 search input</h2>
+    <label for="city">Please select a city</label><br />
+    <input type="search" id="city" name="city" />
+
+
+  </form>
+
+</body>
+</html>

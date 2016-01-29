@@ -1,0 +1,14 @@
+[05-01-2016, 23:04:26] Erro: Código: 42S22 Mensagem: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cod_usuario' in 'where clause'
+
+[06-01-2016, 00:13:16] Erro: Código: HY093 Mensagem: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+
+[06-01-2016, 00:27:57] Erro: Código: HY000 Mensagem: SQLSTATE[HY000]: General error: Extraneous additional parameters
+
+[06-01-2016, 01:22:37] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[06-01-2016, 01:22:37] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[06-01-2016, 01:22:37] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[06-01-2016, 01:22:37] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+

@@ -1,0 +1,236 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link href="../boilerplate.css" rel="stylesheet" type="text/css">
+<link href="../gride1.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.menutitle {cursor:pointer;
+margin-bottom: 1px;
+background-color:red;
+color:white;
+width:136px;
+padding:1px;
+text-align:center;
+font-weight:bold;
+/*/*/border:0px ;/* */
+; font-size: 11px}
+.submenu {margin-bottom: 0.5em;
+margin-left: 1em;
+width:136px;
+font-size: 10px
+color: black;
+background-color: white}
+</style>
+<!-- 
+To learn more about the conditional comments around the html tags at the top of the file:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Do the following if you're using your customized build of modernizr (http://www.modernizr.com/):
+* insert the link to your js here
+* remove the link below to the html5shiv
+* add the "no-js" class to the html tags at the top
+* you can also remove the link to respond.min.js if you included the MQ Polyfill in your modernizr build 
+-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../respond.min.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../pubjs/clickdir.js"></script>
+<style type="text/css">
+.menutitle{
+cursor:pointer;
+margin-bottom: 0px;
+background-color:red;
+color:white;
+width:133px;
+padding:1px;
+text-align:center;
+font-weight:bold;
+/*/*/border:0px;/* */
+; font-size: 13px}
+
+.submenu{
+margin-bottom: 0.5em;
+margin-left: 1em;
+width:136px;
+font-size: 12px
+color: white;
+background-color: #333;
+color:white}
+A:Hover  {
+	color: black;
+	background-color: white;
+	
+}
+.title1 {
+background-color:black;
+font-color:white;
+font-weight:bold;
+/*/*/border:0px ;/* */; 
+padding:1px;
+font-size: 12px;
+color:black;
+width:136px;} 
+}
+#Texto {
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+}
+.Titulos {
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 24px;
+	font-style: oblique;
+	color: #000;
+	text-align: right;
+}
+Textos {
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 14px;
+	color: #000;
+}
+Textos {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000;
+}
+textos {
+	font-family: Arial, Helvetica, sans-serif;
+}
+Textos {
+	font-size: 14px;
+}
+#Texto p {
+	font-family: Arial, Helvetica, sans-serif;
+}
+#Texto p {
+	font-weight: normal;
+}
+.Titulos1 {
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 45px;
+	color: #000;
+}
+</style>
+<script type="text/javascript">
+
+/***********************************************
+* Switch Menu script- by Martial B of http://getElementById.com/
+* Modified by Dynamic Drive for format & NS4/IE4 compatibility
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+if (document.getElementById){ //DynamicDrive.com change
+document.write('<style type="text/css">\n')
+document.write('.submenu{display: none;}\n')
+document.write('</style>\n')
+}
+
+function SwitchMenu(obj){
+	if(document.getElementById){
+	var el = document.getElementById(obj);
+	var ar = document.getElementById("masterdiv").getElementsByTagName("span"); //DynamicDrive.com change
+		if(el.style.display != "block"){ //DynamicDrive.com change
+			for (var i=0; i<ar.length; i++){
+				if (ar[i].className=="submenu") //DynamicDrive.com change
+				ar[i].style.display = "none";
+			}
+			el.style.display = "block";
+		}else{
+			el.style.display = "none";
+		}
+	}
+}
+
+</script>
+
+</head>
+
+<body TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 bgcolor="#FFFFFF">
+<!-- Todos os menus dentro do intervalo de masterdiv-->
+
+<div id="masterdiv">
+<div class="gridContainer clearfix">
+     <table width="1000" border="1">
+    <tr>
+      <td width="990"><img src="Sem título-1.gif" alt="t" width="873"></td>
+    </tr>
+  </table>
+</div>
+<table width="1017" border="1">
+  <tr>
+    <td width="1" bgcolor="#CF2020"><img src="logo_quatrorodas.png" alt="logo"></td>
+    <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub1')">Carros v</div>
+	<span class="submenu" id="sub1">
+		 <a href="../html" target="right">Chevrolet</a> <br>  
+		 <a href="../html" target="right">Ford</a> <br> 
+		 <a href="../html" target="right">Honda</a> <br>
+		 <a href="../html" target="right">Fiat</a> <br> 
+		 <a href="../html" target="right">BMW</a> <br> 
+		 <a href="../html" target="right">Volkwagen</a> <br>
+		 <a href="../html" target="right">Kia</a> <br>  
+		 <a href="../html" target="right">Mercedes</a> <br>  
+	</span>
+    </td>
+    <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub2')">Testes v</div>
+	<span class="submenu" id="sub2">
+		 <a href="../html" target="Fr2">Comparativos</a> <br> 
+		 <a href="../html" target="Fr2">Impress�es</a> <br> 
+		 <a href="../html" target="Fr2">Longa Dura��o</a> <br> 
+		 <a href="../html" target="Fr2">Teste de Pista</a> <br> 
+	</span></td>
+    <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub3')">Noticias v</div>
+  <span class="submenu" id="sub3">
+	   	<a href="../html"  target="right">Cl�ssicos</a> <br> 
+	    	<a href="../html"  target="right">Curiosidades</a> <br> 
+	   	<a href="../html"  target="right">Lan�amentos</a> <br>
+	    	<a href="../html"  target="right">Mercado</a> 
+	 	<a href="../html"  target="right">Segredo</a> <br>
+	</span></td>
+    <td width="94" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub4')" style="width: 136; height: 19"> Auto-Servi�o v</div>
+	<span class="submenu" id="sub4">
+		<a href="../html"  target="Fr2">Auto-defesa</a> <br> 
+		<a href="../html" target="Fr2">Correio t�cnico</a> <br> 
+		<a href="../html" target="Fr2">Produtos para carro</a> <br>
+		<a href="../html" target="Fr2">Se6rvi�os</a> <br>
+  </span> </td>
+    <td width="145" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub5')">Guia de Compras v</div>
+  <span class="submenu" id="sub5">
+	   	<a href="../html"  target="right">Melhor compra carros</a> <br> 
+	    	<a href="../html"  target="right">Melhor compra motos </a> <br> 
+	   	<a href="../html"  target="right">Melhor compra utilit�rios</a> <br>
+	    
+	</span></td>
+    <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub6')">Tabela FIP v</div>
+  <span class="submenu" id="sub6">
+	   	<a href="../html"  target="right">Tabela FIP carros</a> <br> 
+	    	<a href="../html"  target="right">Tabela FIP motos </a> <br> 
+
+	</span></td>
+        <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub7')">Assine</div>
+    <td width="158" bgcolor="#F50000">&nbsp; <input type="search"></td>
+  </tr>
+</table>
+<img src="p2.jpg" alt="p2">
+<div id="Texto">
+  <p class="gridContainer">&nbsp; </p>
+  <p class="gridContainer"><span class="Titulos">	<span class="Titulos1">Trooler T4 X Jeep Renegade</span></span></p>
+  <p><img src="671-compara-01.jpeg"></p>
+  <p>&nbsp;</p>
+  <p> Você já se decidiu: vai comprar um carro com tração 4x4 para, a cada folga,   trocar os buracos do asfalto da cidade pelos de uma trilha. A simples decisão já   é um importante passo, mas para acertar em cheio no alvo é igualmente importante   definir o seu apetite de aventura. Nível 1: trilhas médias, mais do que simples   estradas de terra e menos do que morros com lama e pedras soltas. Nível 2:   transposição de riachos e depressões capazes de deixar só uma roda apoiada no   solo. Quem fica no grupo 1 larga com uma boa vantagem: um único carro pode   atender os desejos on e offroad. Já os mais radicais, do segundo grupo, precisam   investir num veículo de uso exclusivo, pois, na cidade, toda a disposição no   fora de estrada se traduz em desconforto. Para um e para outro, o mercado tem   duas boas opções, ambas movidas a diesel: o Jeep Renegade e o Troller T4. A   versão do recém-nascido Renegade selecionada para este encontro na terra é a   Sport, cujos preços variam entre R$ 99 900 (básico) e R$ 119 850 (com todos os   opcionais). O Troller tem na pintura metálica seu único opcional e os preços   variam de R$ 114 958 a R$ 115 683. Rivais no público-alvo, os dois aventureiros   adotam receitas mecânicas bastante distintas. A Jeep aposta em um motor diesel   2.0 turbo de 170 cv, administrado por um câmbio automático de nove velocidades.   O Troller é mais violento: seu motor é o mesmo da Ranger: um 3.2 de 200 cv. O   câmbio também é oriundo da picape, uma caixa manual com seis marchas. A   configuração, em ambos os casos, tem a ver com a proposta de cada carro:   versatilidade no Renegade, radicalismo no T4. E é assim por todo o projeto. O   curso de suspensão do Troller é quase eterno: raros são os terrenos capazes de   fazer com que uma ou mais rodas percam contato com o solo. No Jeep, valetas e   lombadas urbanas um pouco mais exageradas - e elas nem são tão raras - são   suficientes para uma leve raspada do para-choque no asfalto.</p>
+  <p>&nbsp;</p>
+  <p><img src="Rodape.jpg" width="1090" height="70"></p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

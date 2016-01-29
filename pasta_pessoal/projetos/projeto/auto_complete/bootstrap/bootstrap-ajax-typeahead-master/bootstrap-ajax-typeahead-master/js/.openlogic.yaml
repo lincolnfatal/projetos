@@ -1,0 +1,20 @@
+---
+package_id: jquery
+package_version: 2.0.3
+distribution_raw_file: 2.0.3/jquery-2.0.3.js
+distribution_type: src
+distribution_flavor: ''
+platform_id: all
+platform_vendor: all
+platform_version: all
+platform_arch: all
+name: jQuery 2.0.3 Source
+description: jQuery 2.0.3 Source
+distribution_notes: ''
+notify: 'yes'
+distribution_version: 1
+distribution_file_uuid_string: openlogic-jquery-2.0.3-all-src-1
+release_date: '2013-07-15'
+distribution_file_uuid: !binary |-
+  MzBhZTc1MTk0MmFjYjY0NzMxMTI0ODc3ZjgyMDA5YTE1MWE1YTA5ZGZiNzNh
+  MjkwNWVjNDY5OTY2ODIzODBkZQ==

@@ -1,0 +1,19 @@
+<a href="<?=$this->url(array("controller"=>"contato","action"=>"new"),null,true)?>">Novo Contato</a>
+<table width="100%" cellpadding="3" cellspacing="0" border="1">
+   <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Ações</th>
+   </tr>
+   <?php foreach($this->dados AS $key => $contato): ?>
+   <tr>
+      <td><?=$contato['contato_nome']?></td>
+      <td><?=$contato['contato_telefone']?></td>
+      <td>
+         <a href="<?=$this->url(array("controller"=>"contato","action"=>"show","id"=>"{$contato['contato_id']}"),null,true)?>">Visualizar</a>
+         <a href="<?=$this->url(array("controller"=>"contato","action"=>"edit","id"=>"{$contato['contato_id']}"),null,true)?>">Alterar</a>
+         <a href="<?=$this->url(array("controller"=>"contato","action"=>"destroy","id"=>"{$contato['contato_id']}"),null,true)?>">Delete</a>
+      </td>
+   </tr>
+   <?php endforeach; ?>
+</table>

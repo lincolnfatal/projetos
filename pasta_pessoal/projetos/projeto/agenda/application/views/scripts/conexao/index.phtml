@@ -1,0 +1,32 @@
+<?php
+define('DB_DRIVER', 'mysql');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PWD', '');
+define('DB_DATABASE', 'agenda');
+try {
+    $pdo = new PDO(DB_DRIVER.':host='.DB_HOST.';dbname='.DB_DATABASE, DB_USER, DB_PWD);
+            
+    if ($pdo) {
+        echo "Conexão realizada com sucesso!";
+    } else {
+        echo "Problemas na conexão!";
+    }
+} catch (PDOException $exc) {
+    echo "Problemas na conexão!";
+    echo $exc->getMessage();
+}
+
+foreach(PDO::getAvailableDrivers() as $driver) {
+  echo $driver;
+}
+
+/*
+[PHP_PDO]
+extension=php_pdo.dll
+[PHP_PDO_MYSQL]
+extension=php_pdo_mysql.dll
+extension=pdo.so
+extension=pdo_mysql.so
+*/
+?>

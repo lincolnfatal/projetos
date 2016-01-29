@@ -1,0 +1,195 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link href="../boilerplate.css" rel="stylesheet" type="text/css">
+<link href="../gride1.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.menutitle {cursor:pointer;
+margin-bottom: 1px;
+background-color:red;
+color:white;
+width:120px;
+padding:1px;
+text-align:center;
+font-weight:bold;
+/*/*/border:0px ;/* */
+; font-size: 11px}
+.submenu {margin-bottom: 0.5em;
+margin-left: 1em;
+width:136px;
+font-size: 10px
+color: black;
+background-color: white}
+</style>
+
+<script src="../respond.min.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../pubjs/clickdir.js"></script>
+<style type="text/css">
+.menutitle{
+cursor:pointer;
+margin-bottom: 0px;
+background-color:red;
+color:white;
+width:133px;
+padding:1px;
+text-align:center;
+font-weight:bold;
+/*/*/border:0px;/* */
+; font-size: 13px}
+
+.submenu{
+margin-bottom: 0.5em;
+margin-left: 1em;
+width:136px;
+font-size: 12px
+color: white;
+background-color: #333;
+color:white}
+A:Hover  {
+	color: black;
+	background-color: white;
+	
+}
+.title1 {
+background-color:black;
+font-color:white;
+font-weight:bold;
+/*/*/border:0px ;/* */; 
+padding:1px;
+font-size: 12px;
+color:black;
+width:136px;} 
+}
+</style>
+<script type="text/javascript">
+
+if (document.getElementById){ 
+document.write('<style type="text/css">\n')
+document.write('.submenu{display: none;}\n')
+document.write('</style>\n')
+}
+
+function SwitchMenu(obj){
+	if(document.getElementById){
+	var el = document.getElementById(obj);
+	var ar = document.getElementById("masterdiv").getElementsByTagName("span"); 
+		if(el.style.display != "block"){ 
+			for (var i=0; i<ar.length; i++){
+				if (ar[i].className=="submenu") 
+				ar[i].style.display = "none";
+			}
+			el.style.display = "block";
+		}else{
+			el.style.display = "none";
+		}
+	}
+}
+
+</script>
+
+</head>
+
+<body TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 bgcolor="#FFFFFF">
+
+<div id="masterdiv">
+<div class="gridContainer clearfix">
+     <table width="1000" border="1">
+    <tr>
+      <td width="990"><img src="Sem título-1.gif" alt="Topo1" width="1027" height="83"></td>
+    </tr>
+  </table>
+</div>
+<table width="1017" border="1">
+  <tr>
+    <td width="1" bgcolor="#CF2020"><img src="logo_quatrorodas.png" alt="logo"></td>
+    <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub1')">Carros v</div>
+	<span class="submenu" id="sub1">
+		 <a href="../html" target="right">Chevrolet</a> <br>  
+		 <a href="../html" target="right">Ford</a> <br> 
+		 <a href="../html" target="right">Honda</a> <br>
+		 <a href="../html" target="right">Fiat</a> <br> 
+		 <a href="../html" target="right">BMW</a> <br> 
+		 <a href="../html" target="right">Volkwagen</a> <br>
+		 <a href="../html" target="right">Kia</a> <br>  
+		 <a href="../html" target="right">Mercedes</a> <br>  
+	</span>
+    </td>
+    <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub2')">Testes v</div>
+	<span class="submenu" id="sub2">
+		 <a href="../html" target="Fr2">Comparativos</a> <br> 
+		 <a href="../html" target="Fr2">Impressões</a> <br> 
+		 <a href="../html" target="Fr2">Longa Duração</a> <br> 
+		 <a href="../html" target="Fr2">Teste de Pista</a> <br> 
+	</span></td>
+    <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub3')">Noticias v</div>
+  <span class="submenu" id="sub3">
+	   	<a href="../html"  target="right">Clássicos</a> <br> 
+	    	<a href="../html"  target="right">Curiosidades</a> <br> 
+	   	<a href="../html"  target="right">Lançamentos</a> <br>
+	    	<a href="../html"  target="right">Mercado</a> 
+	 	<a href="../html"  target="right">Segredo</a> <br>
+	</span></td>
+    <td width="94" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub4')" style="width: 136; height: 19"> Auto-Serviço v</div>
+	<span class="submenu" id="sub4">
+		<a href="../html"  target="Fr2">Auto-defesa</a> <br> 
+		<a href="../html" target="Fr2">Correio técnico</a> <br> 
+		<a href="../html" target="Fr2">Produtos para carro</a> <br>
+		<a href="../html" target="Fr2">Se6rviços</a> <br>
+  </span> </td>
+    <td width="145" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub5')">Guia de Compras v</div>
+  <span class="submenu" id="sub5">
+	   	<a href="../html"  target="right">Melhor compra carros</a> <br> 
+	    	<a href="../html"  target="right">Melhor compra motos </a> <br> 
+	   	<a href="../html"  target="right">Melhor compra utilitários</a> <br>
+	    
+	</span></td>
+    <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub6')">Tabela FIP v</div>
+  <span class="submenu" id="sub6">
+	   	<a href="../html"  target="right">Tabela FIP carros</a> <br> 
+	    	<a href="../html"  target="right">Tabela FIP motos </a> <br> 
+
+	</span></td>
+        <td width="140" bgcolor="#F50000">&nbsp;<div class="menutitle" onclick="SwitchMenu('sub7')">Assine</div>
+    <td width="158" bgcolor="#F50000">&nbsp; <input type="search"></td>
+    <td width="8">&nbsp; </td>
+  </tr>
+</table>
+<img src="p2.jpg" alt="p2" usemap="#Map">
+<map name="Map">
+  <area shape="rect" coords="0,25,316,328" href="BMW1.html">
+</map>
+<img src="p3.jpg" alt="p3" usemap="#Map2"><img src="p7 .jpg" width="1322" height="304" usemap="#Map3">
+<map name="Map3">
+  <area shape="rect" coords="0,2,330,301" href="AudixMercedes.html">
+  <area shape="rect" coords="342,3,661,303" href="NissanGTR.html">
+  <area shape="rect" coords="665,1,994,313" href="BMW2.html">
+  <area shape="rect" coords="1000,3,1321,302" href="GM_Malibu.html">
+</map>
+<map name="Map2">
+  <area shape="rect" coords="1,2,561,454" href="BMW1.html">
+  <area shape="rect" coords="561,-1,917,232" href="Sportage.html">
+  <area shape="rect" coords="669,454,991,650" href="#">
+  <area shape="rect" coords="613,229,964,489" href="Porsche.html">
+  <area shape="rect" coords="995,3,1310,245" href="#">
+</map>
+<map name="Map2">
+  <area shape="rect" coords="558,230,889,455" href="Porsche.html">
+  <area shape="rect" coords="920,4,1216,227" href="http://ofertas.vw.com.br/fusca/diadema-SP?&&gclid=CLTa85nHicoCFYwGkQodB_YP7w&dclid=CPP5hJrHicoCFQ-JkQodb9EAcw">
+  <area shape="rect" coords="891,232,1216,452" href="http://premium.vw.com.br/tiguan?&&gclid=CM-6qdLHicoCFcWAkQodnfkJTA&dclid=CMbUxNLHicoCFQMbkQodj-MIOw">
+</map>
+<img src="p5.jpg" alt="p5" usemap="#Map4">
+<map name="Map4">
+  <area shape="rect" coords="130,6,1216,40" href="Troller_T4XJeep_renegade.html">
+</map>
+</body>
+</html>

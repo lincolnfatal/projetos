@@ -1,0 +1,95 @@
+<?php
+$v_params = $this->getParams();
+$v_consultas = $v_params['v_consultas'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>
+	 
+		WebService
+	</title>
+
+	
+	<link rel="stylesheet" type="text/css" href="template/css/default.css" />
+	
+</head>
+<body>
+
+
+	<div align="center">
+				
+		<a   href='?controle=Consulta&acao=listarConsulta' class='bt_green'>Voltar</a>
+	</div>
+	<br />
+
+
+
+	<div align="center">
+		<table class='table_list' width="80%">
+		
+			<tr>
+				<th>
+					Temp. Requisitada
+				</th>
+				<th>
+					Tipo
+				</th>
+				<th>
+					Temp. Resultado
+				</th>
+				<th>
+					Data
+				</th>
+				<th>
+					IP
+				</th>
+				
+			</tr>
+			<?php
+			foreach($v_consultas AS $o_consulta)
+			{
+				
+				?>
+				<tr color='red'>
+					<td>
+						<?php echo $o_consulta->getRequisicaoTemperatura()?>
+					</td>
+					<td>
+						<?php echo $o_consulta->getRequisicaoTipo()?>
+					</td>
+					<td>
+						<?php echo $o_consulta->getRespostaTemperatura()?>
+					</td>
+					<td>
+						<?php echo $o_consulta->getDataConsulta()?>
+					</td>
+					<td >
+						<?php echo $o_consulta->getIp()?>
+					</td>
+					
+					
+					
+				</tr>
+				<tr color='red'>
+					<td colspan='5'>
+						<?php print_r(unserialize($o_consulta->getXmlGerado()));?>
+					</td>
+					
+					
+					
+					
+				</tr>
+				<?php
+			}
+			?>
+		</table>
+		
+	</div>
+	
+	
+</body>
+</html>
+
+

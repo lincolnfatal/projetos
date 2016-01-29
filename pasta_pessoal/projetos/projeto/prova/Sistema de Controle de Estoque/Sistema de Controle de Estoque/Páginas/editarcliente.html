@@ -1,0 +1,135 @@
+<?php
+session_start();
+include "config.php";
+
+if (isset($_POST["editarcliente"])){
+$_SESSION["cliente_id"]=$_POST["cliente"]; 
+
+unset($_POST["cliente"]);
+//procura os dados do cliente escolhido
+if (isset($_SESSION['cliente'])){
+   unset($_SESSION['cliente']);
+  }
+
+lercliente($_SESSION['cliente_id']);
+}else{
+   
+  if (isset($_SESSION['cliente_id'])){
+   unset($_SESSION['cliente_id']);
+  } 
+ unset($_SESSION['cliente']);
+  
+    }
+?>
+
+
+
+<! DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<title>sistema de Estoque-Produto</title>
+	<!--ARQUIVO CSS-->
+	<link  rel="stylesheet"  href="css/bootstrap.css">
+	<link  rel="stylesheet"  href="css/estilo.css">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/ie10-viewport-bug-workaround.js"></script>	
+	
+</head>	
+	
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="index.php">Controle de Estoque</a>
+				</div>
+				
+				<div id="navbar" class="collapse navbar-collapse">
+				  <ul class="nav navbar-nav">
+					<li><a href="produto.php">Produtos</a></li>
+					<li><a href="cliente.php">Clientes</a></li>
+					<li><a href="#contact">Pedidos</a></li>
+				  </ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>	
+		<div class="container">
+			<div class="starter-template">
+			
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<?php 
+							if(isset($_POST['submit'])){
+								$cliente_nome = $_POST['cliente_nome'];
+								$cliente_email = $_POST['cliente_email'];
+								$cliente_telefone  = $_POST['cliente_telefone'];								
+								
+								$query = $mysqli->query("INSERT INTO cliente VALUES ('','$cliente_nome','$cliente_email','$cliente_telefone')");
+								
+								if($query){
+									?>
+								<div class="alert alert-success alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<strong>Sucesso!</strong> Informações Armazenadas com sucesso.
+									
+								</div>
+						
+									<?php
+								}else{
+									
+									?>	
+									<div class="alert alert-danger alert-dismissible" role="alert">
+									 
+									  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									  <strong>Não Foi salvo!</strong> Melhor verificar o que houve de errado.
+									</div>								
+									<?php
+								}
+							}
+						?>					
+						<form method="post" action="crudcliente" class="form-horizontal">
+							
+								<h3>Editar Cliente</h3>
+								<br>
+								<div class="row">
+									<div class="col-md-2">Nome do cliente</div>
+									<div class="col-md-4"><input type="text" name="cliente_nome" class="form-control" id="inputEmail3" value="<?php if (isset($_SESSION['cliente']['cliente_nome'])) echo $_SESSION['cliente']['cliente_nome']?>"/></div>
+								</div>
+								
+								<br>
+								<div class="row">
+									<div class="col-md-2">E-mail</div>
+									<div class="col-md-4"> <input type="text" name="cliente_email" class="form-control" id="inputEmail3" value="<?php if (isset($_SESSION['cliente']['cliente_email'])) echo $_SESSION['cliente']['cliente_email']?>"></div>
+								</div>	
+								<br>
+								
+								<div class="row">
+									<div class="col-md-2">Telefone</div>
+									<div class="col-md-4"> <input type="text" name="cliente_telefone" class="form-control" id="inputEmail3" value="<?php if (isset($_SESSION['cliente']['cliente_telefone'])) echo $_SESSION['cliente']['cliente_telefone']?>" ></div>
+								</div>	
+								<br>
+								<div id="actions" class="row">
+									<div class="col-md-12">
+									  <button type="submit" name="submit" class="btn btn-primary">Salvar</button>
+									  <a href="index.php" class="btn btn-default">Cancelar</a>
+									</div>
+								</div>									
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!-- /.container -->
+
+
+	</body>
+<html>

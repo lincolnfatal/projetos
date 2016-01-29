@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>Menu nouve</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="pubjs/clickdir.js"></script>
+<style type="text/css">
+.menutitle{
+cursor:pointer;
+margin-bottom: 1px;
+background-color:red;
+color:white;
+width:136px;
+padding:1px;
+text-align:center;
+font-weight:bold;
+/*/*/border:1px black solid;/* */
+; font-size: 11px}
+
+.submenu{
+margin-bottom: 0.5em;
+margin-left: 1em;
+width:136px;
+font-size: 10px
+color: black;
+background-color: white}
+A:Hover  {
+	color: black;
+	background-color: white;
+	
+}
+.title1 {
+background-color:black;
+font-color:white;
+font-weight:bold;
+/*/*/border:1px black solid;/* */; 
+padding:1px;
+font-size: 12px;
+color:black;
+width:136px;} 
+}
+</style>
+<script type="text/javascript">
+
+/***********************************************
+* Switch Menu script- by Martial B of http://getElementById.com/
+* Modified by Dynamic Drive for format & NS4/IE4 compatibility
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+if (document.getElementById){ //DynamicDrive.com change
+document.write('<style type="text/css">\n')
+document.write('.submenu{display: none;}\n')
+document.write('</style>\n')
+}
+
+function SwitchMenu(obj){
+	if(document.getElementById){
+	var el = document.getElementById(obj);
+	var ar = document.getElementById("masterdiv").getElementsByTagName("span"); //DynamicDrive.com change
+		if(el.style.display != "block"){ //DynamicDrive.com change
+			for (var i=0; i<ar.length; i++){
+				if (ar[i].className=="submenu") //DynamicDrive.com change
+				ar[i].style.display = "none";
+			}
+			el.style.display = "block";
+		}else{
+			el.style.display = "none";
+		}
+	}
+}
+
+</script>
+</head>
+
+<body TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 bgcolor="#FFFFFF">
+<!-- Todos os menus dentro do intervalo de masterdiv-->
+
+<div id="masterdiv">
+  <div class="menutitle" onclick="SwitchMenu('sub1')">Carros v</div>
+	<span class="submenu" id="sub1">
+		 <a href="html" target="right">Chevrolet</a> <br>  
+		 <a href="html" target="right">Ford</a> <br> 
+		 <a href="html" target="right">Honda</a> <br>
+		 <a href="html" target="right">Fiat</a> <br> 
+		 <a href="html" target="right">BMW</a> <br> 
+		 <a href="html" target="right">Volkwagen</a> <br>
+		 <a href="html" target="right">Kia</a> <br>  
+		 <a href="html" target="right">Mercedes</a> <br>  
+	</span>
+  <div class="menutitle" onclick="SwitchMenu('sub2')">Testes v</div>
+	<span class="submenu" id="sub2">
+		 <a href="html" target="Fr2">Comparativos</a> <br> 
+		 <a href="html" target="Fr2">Impressões</a> <br> 
+		 <a href="html" target="Fr2">Longa Duração</a> <br> 
+		 <a href="html" target="Fr2">Teste de Pista</a> <br> 
+	</span>
+  <div class="menutitle" onclick="SwitchMenu('sub3')">Noticias v</div>
+  <span class="submenu" id="sub3">
+	   	<a href="html"  target="right">Clássicos</a> <br> 
+	    	<a href="html"  target="right">Curiosidades</a> <br> 
+	   	<a href="html"  target="right">Lançamentos</a> <br>
+	    	<a href="html"  target="right">Mercado</a> 
+	 	<a href="html"  target="right">Segredo</a> <br>
+	</span>
+  <div class="menutitle" onclick="SwitchMenu('sub4')" style="width: 136; height: 19"> Auto-Serviço v</div>
+	<span class="submenu" id="sub4">
+		<a href="html"  target="Fr2">Auto-defesa</a> <br> 
+		<a href="html" target="Fr2">Correio técnico</a> <br> 
+		<a href="html" target="Fr2">Produtos para carro</a> <br>
+		<a href="html" target="Fr2">Se6rviços</a> <br>
+  </span> 
+  <div class="menutitle" onclick="SwitchMenu('sub5')">Guia de Compras v</div>
+  <span class="submenu" id="sub5">
+	   	<a href="html"  target="right">Melhor compra carros</a> <br> 
+	    	<a href="html"  target="right">Melhor compra motos </a> <br> 
+	   	<a href="html"  target="right">Melhor compra utilitários</a> <br>
+	    
+	</span>
+</div>
+</body>
+</html>
