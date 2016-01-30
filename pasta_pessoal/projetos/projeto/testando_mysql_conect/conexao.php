@@ -4,7 +4,7 @@ class class_mysql
 	 var $host="localhost";
 	 var $user="root";
 	 var $password="";
-	 var $database="teste_pdo";
+	 var $database="teste";
 
 	var $query;
 	var $link;

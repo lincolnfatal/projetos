@@ -20,7 +20,7 @@ abstract class PersistModelAbstract
       
     function __construct()
     {
-		$this->o_db  = new PDO('mysql:host=localhost;dbname=teste_pdo', 'root', '',
+		$this->o_db  = new PDO('mysql:host=localhost;dbname=teste', 'root', '',
 			array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 		$this->o_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->o_db ->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
